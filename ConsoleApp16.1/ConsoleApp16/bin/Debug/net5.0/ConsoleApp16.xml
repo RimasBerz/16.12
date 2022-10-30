@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConsoleApp16</name>
+    </assembly>
+    <members>
+        <member name="P:ConsoleApp16.Person.Name">
+            <summary>
+            Ну типо имя
+            </summary>
+        </member>
+        <member name="P:ConsoleApp16.Person.Surname">
+            <summary>
+            Ну типо фамилия
+            </summary>
+        </member>
+        <member name="P:ConsoleApp16.Person.Fathername">
+            <summary>
+            Ну типо отчество
+            </summary>
+        </member>
+        <member name="P:ConsoleApp16.Person.Adresshome">
+            <summary>
+            Ну типо адрес
+            </summary>
+        </member>
+        <member name="P:ConsoleApp16.Person.Phonenumber">
+            <summary>
+            Ну типо номер телефона
+            </summary>
+        </member>
+        <member name="M:ConsoleApp16.Person.#ctor">
+            <summary>
+            Ну типо без параметров
+            </summary>
+        </member>
+        <member name="M:ConsoleApp16.Student.Print2">
+            <summary>
+            Ну типо принт
+            </summary>
+        </member>
+        <member name="M:ConsoleApp16.Student.#ctor">
+            <summary>
+            Ну типо без параметров
+            </summary>
+        </member>
+        <member name="E:ConsoleApp16.Student.Avtomat">
+            <summary>
+            Ну типо события
+            public event EventHandler Iskluchenue;
+            </summary>
+        </member>
+    </members>
+</doc>
