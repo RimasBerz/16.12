@@ -38,8 +38,8 @@ class Program
         //    Console.WriteLine(arr);
         //}
 
-        Student b = new Student();
-        StateSaver.SaveStudent(b);
+       Student b = new Student("Римас","Бер","Вик");
+        StateSaver.SaveStudent(b, "C:/Users/Пользователь/Desktop/ConsoleApp16.1/НовыйДокумент.txt");
         //    var p = new Student("Римас", "Берж", "В","фвг9шар","228 ");
         //    p.Avtomat += NewMark;
         //    p.ChekAvtomat();
