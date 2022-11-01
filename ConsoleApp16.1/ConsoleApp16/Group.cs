@@ -1,57 +1,59 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using Newtonsoft.Json;
+using System.IO;
 namespace ConsoleApp16
 {
-    namespace BinaryFormatterExample
-    {
+    
 
         internal class StateSaver
         {
-            public static void SaveStudent(Student b)
+        
+            public static void SaveStudent(Student b,string fileName)
             {
-                Student product = new Student
-                {
-                    Name = "Олег",
-                    Surname = "Солнечный",
-                    Fathername = "Кипарисович",
-                    Birthday = new MyDate(),
-                    Phonenumber = "0665488096",
-
-                };
-                var formatter = new BinaryFormatter();
-                using (var fStream = new FileStream("C:/Users/Пользователь/Desktop/ConsoleApp16.1", FileMode.Create, FileAccess.Write))
-                {
-                    formatter.Serialize(fStream, product);
-                }
-                string s = JsonConvert.SerializeObject(product, Formatting.Indented);
+            Student save = new Student();
+            Student product = new Student
+            {
+                Name = save.Name,
+                Surname = save.Surname,
+                Fathername = save.Fathername,
+                Birthday = save.Birthday,
+                Phonenumber = save.Phonenumber,
+            };
+            var formatter = new BinaryFormatter();
+            using (var fStream = new FileStream(fileName,FileMode.Create, FileAccess.Write))
+            {
+                formatter.Serialize(fStream, product);
+            }
+            string s = JsonConvert.SerializeObject(product, Formatting.Indented);
                 Console.WriteLine(s);
 
                 Student deserializedProduct = JsonConvert.DeserializeObject<Student>(s);
             }
-            public static void SaveGroup(Group b)
+            public static void SaveGroup(Group b, string fileName)
             {
-                Group product = new Group
+                Group save = new Group();
+                Group productG = new Group
                 {
-                    NameGroup = "ПВ",
-                    NumberCourse = 111,
-
+                    NameGroup = save.NameGroup,
+                    NumberCourse = save.NumberCourse,
+                    Length = save.Length,
                 };
                 var formatter = new BinaryFormatter();
-                using (var fStream = new FileStream("C:/Users/Пользователь/Desktop/ConsoleApp16.1", FileMode.Create, FileAccess.Write))
+                using (var fStream = new FileStream(fileName, FileMode.Create, FileAccess.Write))
                 {
-                    formatter.Serialize(fStream, product);
+                    formatter.Serialize(fStream, productG);
                 }
-                string s = JsonConvert.SerializeObject(product, Formatting.Indented);
+                string s = JsonConvert.SerializeObject(productG, Formatting.Indented);
                 Console.WriteLine(s);
 
                 Student deserializedProduct = JsonConvert.DeserializeObject<Student>(s);
             }
         }
-    }
+    
     class GroupEnumerator : Group, IEnumerator
     {
 
